@@ -1,4 +1,4 @@
-package net.engineeringdigest.journalApp.utilis;
+package net.engineeringdigest.journalApp.Utilis;
 
 import org.springframework.stereotype.Component;
 import io.jsonwebtoken.Claims;
@@ -51,7 +51,7 @@ public class JwtUtil {
                 .header().empty().add("typ","JWT")
                 .and()
                 .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60)) // 5 minutes expiration time
+                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60)) // 60 minutes expiration time
                 .signWith(getSigningKey())
                 .compact();
     }
